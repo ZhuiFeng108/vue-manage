@@ -22,7 +22,7 @@ export default {
 	name: "CommonHeader",
 	data() {
 		return {
-			userImg: require("../assets/images/user.jpg"),
+			userImg: require("@images/user.jpg"),
 		};
 	},
   methods: {
