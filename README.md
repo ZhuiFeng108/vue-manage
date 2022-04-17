@@ -1,4 +1,5 @@
 # vue-manage
+<<<<<<< HEAD
 
 ## Project setup
 ```
@@ -23,3 +24,4 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 First Vue Project
+>>>>>>> 968a2e90423390b5d779dd933c1544b278b414e6
