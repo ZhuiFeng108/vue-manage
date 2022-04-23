@@ -1,8 +1,13 @@
 <template>
 	<header>
 		<div class="l-content">
-			<el-button @click="handleMenu" plain icon="el-icon-menu" size="mini"></el-button>
-			<h3 style="color: #fff">首页{{ xxx }}{{aa}}</h3>
+			<el-button
+				@click="handleMenu"
+				plain
+				icon="el-icon-menu"
+				size="mini"
+			></el-button>
+			<h3 style="color: #fff">首页{{ xxx }}{{ aa }}</h3>
 			<!-- <input v-model="changeVal"> -->
 		</div>
 		<div class="r-content">
@@ -20,7 +25,7 @@
 </template>
 <script>
 export default {
-	props: ['xxx'],
+	props: ["xxx"],
 	name: "CommonHeader",
 	data() {
 		return {
@@ -29,15 +34,16 @@ export default {
 		};
 	},
 	watch: {
-		changeVal(){
-			this.$emit("childMsg", this.xxx)
-		}
+		changeVal() {
+			this.$emit("childMsg", this.xxx);
+			console.log(this.xxx);
+		},
 	},
-  methods: {
-    handleMenu(){
-      this.$store.commit('collapseMenu')
-    }
-  },
+	methods: {
+		handleMenu() {
+			this.$store.commit("collapseMenu");
+		},
+	},
 };
 </script>
 <style lang="less" scoped>

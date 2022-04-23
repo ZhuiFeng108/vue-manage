@@ -142,47 +142,15 @@ export default {
 			],
 		};
 	},
-	created() {},
-
 	computed: {
 		feng() {
 			return this.a;
 		},
 	},
-
-	methods: {},
-	// beforeMount() {
-	// 	this.a = window.localStorage.getItem("lastname");
-	// 	console.log("beforeMount", window.localStorage);
-	// },
-
 	mounted() {
-		// console.log("mounted", window.localStorage);
-		// if (window.localStorage.getItem("lastname") === "Smith") {
-		// 	// this.$router.go(0)
-		// 	window.localStorage.clear();
-		// 	window.location.reload();
-		// 	console.log("5415454", window.localStorage);
-		// }
-		// this.$http.get("/user?ID=12345")
-		// 	.then(function (response) {
-		// 		console.log(response);
-		// 	})
-		// 	.catch(function (error) {
-		// 		console.log(error);
-		// 	});
-
 		getMenu().then((res) => {
 			console.log(res);
 		});
 	},
-	// updated() {
-	// 	window.localStorage.removeItem("Smith");
-	// 	console.log("beforeDestroy", window.localStorage);
-	// },
-	// destroyed() {
-	// 	window.localStorage.removeItem("Smith");
-	// 	console.log("beforeDestroy", window.localStorage);
-	// },
 };
 </script>
