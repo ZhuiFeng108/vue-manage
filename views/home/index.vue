@@ -6,7 +6,8 @@
 					<div class="user">
 						<img :src="userImg" />
 						<div class="userinfo">
-							<p class="name">Admin</p>
+							<!-- <p class="name">{{ this.$root.meng }}</p> -->
+							<p class="name">{{ feng }}</p>
 							<p class="access">超级管理员</p>
 						</div>
 					</div>
@@ -66,12 +67,13 @@
 	</div>
 </template>
 <script>
-import { getMenu } from '@api/data.js'
+import { getMenu } from "@api/data.js";
 
 export default {
 	name: "VueHome",
 	data() {
 		return {
+			a: "",
 			userImg: require("@images/user.jpg"),
 			tableLabel: {
 				date: "日期",
@@ -140,7 +142,28 @@ export default {
 			],
 		};
 	},
+	created() {},
+
+	computed: {
+		feng() {
+			return this.a;
+		},
+	},
+
+	methods: {},
+	// beforeMount() {
+	// 	this.a = window.localStorage.getItem("lastname");
+	// 	console.log("beforeMount", window.localStorage);
+	// },
+
 	mounted() {
+		// console.log("mounted", window.localStorage);
+		// if (window.localStorage.getItem("lastname") === "Smith") {
+		// 	// this.$router.go(0)
+		// 	window.localStorage.clear();
+		// 	window.location.reload();
+		// 	console.log("5415454", window.localStorage);
+		// }
 		// this.$http.get("/user?ID=12345")
 		// 	.then(function (response) {
 		// 		console.log(response);
@@ -148,9 +171,18 @@ export default {
 		// 	.catch(function (error) {
 		// 		console.log(error);
 		// 	});
-		getMenu().then(res => {
+
+		getMenu().then((res) => {
 			console.log(res);
 		});
 	},
+	// updated() {
+	// 	window.localStorage.removeItem("Smith");
+	// 	console.log("beforeDestroy", window.localStorage);
+	// },
+	// destroyed() {
+	// 	window.localStorage.removeItem("Smith");
+	// 	console.log("beforeDestroy", window.localStorage);
+	// },
 };
 </script>

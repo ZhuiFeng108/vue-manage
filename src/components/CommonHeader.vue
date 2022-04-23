@@ -2,7 +2,8 @@
 	<header>
 		<div class="l-content">
 			<el-button @click="handleMenu" plain icon="el-icon-menu" size="mini"></el-button>
-			<h3 style="color: #fff">首页</h3>
+			<h3 style="color: #fff">首页{{ xxx }}{{aa}}</h3>
+			<!-- <input v-model="changeVal"> -->
 		</div>
 		<div class="r-content">
 			<el-dropdown trigger="hover" size="mini">
@@ -19,11 +20,18 @@
 </template>
 <script>
 export default {
+	props: ['xxx'],
 	name: "CommonHeader",
 	data() {
 		return {
+			aa: this.props.xxx,
 			userImg: require("@images/user.jpg"),
 		};
+	},
+	watch: {
+		changeVal(){
+			this.$emit("childMsg", this.xxx)
+		}
 	},
   methods: {
     handleMenu(){

@@ -1,10 +1,11 @@
 <template>
 	<el-container style="height: 100%">
+		<h1>{{msg}}</h1>
 		<el-aside width="auto">
 			<common-aside />
 		</el-aside>
 		<el-container>
-			<el-header><common-header /></el-header>
+			<el-header><common-header :xxx='msg'/></el-header>
 			<el-main>
 				<router-view></router-view>
 			</el-main>
@@ -22,7 +23,9 @@ export default {
 		CommonHeader,
 	},
 	data() {
-		return {};
+		return {
+			msg: 9999
+		};
 	},
 };
 </script>

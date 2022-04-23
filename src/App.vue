@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+		<h1>{{this.$root.meng}}</h1>
     <router-view></router-view>
   </div>
 </template>
